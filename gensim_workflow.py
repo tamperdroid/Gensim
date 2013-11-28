@@ -19,6 +19,7 @@ STEP 1 : Index and vectorize
 ----------
 We create a dictionary, an index of all unique values: <class 'gensim.corpora.dictionary.Dictionary'>
 Then convert convert tokenized documents to vectors: <type 'list'>
+Save the vectorized corpus as a .mm file
 
 STEP 2 : Transform and compute similarity between corpuses
 ----------
@@ -69,6 +70,7 @@ print "We create a dictionary, an index of all unique values: %s"%type(dictionar
 raw_corpus = [dictionary.doc2bow(t) for t in tweets]
 print "Then convert convert tokenized documents to vectors: %s"% type(raw_corpus)
 corpora.MmCorpus.serialize('/tmp/tweets.mm', raw_corpus) # store to disk
+print "Save the vectorized corpus as a .mm file"
 print
 
 # STEP 2 : similarity between corpuses
